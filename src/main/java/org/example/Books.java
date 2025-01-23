@@ -14,7 +14,7 @@ public class Books implements Comparable<Books>  {
     private String title;
     private String author;
     private int ISBN;
-Libray lb =new Libray();
+Library lb =new Library();
 
     public int compareTo(Books other) {
 
