@@ -14,17 +14,18 @@ public class Student {
     Set<Student>students =new HashSet<>();
 
 
-    public void addStudent(int id){
-        Student st=new Student();
-        st.setId(id);
-        if(students.contains(id)){
-            try {
-                throw new StudentException("Student with id"+getId()+"already exists");
+    public void addStudent(Student st){
+        try{
+            if(students.contains(st)){
+                throw new StudentException("Student with id"+st.getId()+"already exists");
+            }
+            students.add(st);
 
-                students.add(st);
 
-            }catch ()
+            }catch (StudentException ste){
+                System.out.println(ste.getMessage());
+            }
         }
     }
 
-}
+
